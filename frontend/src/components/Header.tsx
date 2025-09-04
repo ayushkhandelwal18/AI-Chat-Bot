@@ -4,6 +4,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Logo from "./shared/Logo";
 import { useAuth } from '../context/AuthContent';
 import NavigationLink from './shared/NavigationLink';
+import { IconButton } from '@mui/material';
+import { FaGithub } from 'react-icons/fa';
 
 
 function Header() {
@@ -18,7 +20,7 @@ function Header() {
         }}>
             <Logo/>
 
-            <div>
+            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
           {auth?.isLoggedIn ? (
             <>
               <NavigationLink
@@ -52,6 +54,17 @@ function Header() {
             </>
           )}
         </div>
+
+       <IconButton
+  component="a"
+  href="https://github.com/ayushkhandelwal18/AI-Chat-Bot"
+  target="_blank"
+  rel="noopener noreferrer"
+  sx={{ color: "white", ml: 2 }}
+  aria-label="GitHub repository"
+>
+  <FaGithub size={28} />
+</IconButton>
 
         </Toolbar>
     </AppBar>

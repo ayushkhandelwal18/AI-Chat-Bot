@@ -13,15 +13,15 @@ function Home() {
   const theme = useTheme();
   const isBelowMd = useMediaQuery(theme.breakpoints.down("md"));
 
-   // ✅ Robo voice on homepage load
+   // Robo voice on homepage load
   useEffect(() => {
-  if (!window.hasWelcomed) {        // 👈 ek custom flag
+  if (!window.hasWelcomed) {        //  ek custom flag
     const utterance = new SpeechSynthesisUtterance("Welcome to AI Buddy");
     utterance.pitch = 1.2;
     utterance.rate = 1;
     utterance.volume = 1;
     speechSynthesis.speak(utterance);
-    window.hasWelcomed = true;      // ✅ dubara mat bolna
+    window.hasWelcomed = true;      // dubara mat bolna
   }
 }, []);
 

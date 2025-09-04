@@ -6,7 +6,7 @@ import { useAuth } from "../../context/AuthContent";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { coldarkDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-// ✅ regex se saare code blocks detect karo
+// regex se saare code blocks detect karo
 function extractCodeBlocks(message: string) {
   const regex = /```(\w+)?\n([\s\S]*?)```/g;
   const blocks: { lang: string; code: string }[] = [];

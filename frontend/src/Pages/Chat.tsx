@@ -152,7 +152,7 @@ function Chat() {
   </Avatar>
 
   {/* Full name below avatar */}
-  <Typography sx={{ mt: 1, fontWeight: 700, fontSize: 20, textAlign: "center" }}>
+  <Typography sx={{ mt: 1, fontWeight: 700, fontSize: 20, textAlign: "center",  textTransform: "uppercase", }}>
     {auth?.user?.name ? auth.user.name : "Unknown User"}
   </Typography>
 </Box>

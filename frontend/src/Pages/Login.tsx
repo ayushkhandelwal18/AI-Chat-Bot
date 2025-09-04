@@ -32,7 +32,7 @@ function Login() {
 
 
 return (
-    <Box width={"100%"} height={"100%"} display="flex" flex={1}>
+    <Box width={"100%"} height={"100%"} display="flex" flex={1} >
       <Box padding={8} mt={1} display={{ md: "flex", sm: "none", xs: "none" }}>
         <img    src="airobot.png" alt="Robot" style={{ width: "400px" }} />
       </Box>

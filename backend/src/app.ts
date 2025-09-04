@@ -16,8 +16,8 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
-//remove it in production only use in development
-app.use(morgan("dev")); // Logging middleware
+// //remove it in production only use in development
+// app.use(morgan("dev")); // Logging middleware
 
 
 app.use("/api/v1",appRouter);
