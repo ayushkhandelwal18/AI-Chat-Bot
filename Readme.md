@@ -1,118 +1,165 @@
-# AI-Buddy 🤖
+# 🤖 AI‑Buddy
 
-AI-Buddy is a modern MERN stack chatbot application powered by the Google Gemini API. 
-It features secure user authentication, JWT-based session management with HTTP-only cookies,
-chat history storage in MongoDB, and a beautiful, responsive UI built with React and Material UI.
+A smart, reliable, and friendly AI chatbot built with the **MERN stack** + **Gemini API**, designed to handle all kinds of queries (general, coding, math, science, recipes, explanations, definitions, summaries, and more) and reply in a clean, structured format.
 
 ---
 
-## 🚀 Features
+## ✨ Features
 
-- User Authentication & Authorization
-- Data Validation with `express-validator`
-- Chat Storage in MongoDB
-- JWT Tokens & HTTP-only Cookies (`cookie-parser`)
-- Protected Routes with verification middleware
-- React Frontend with Vite (TypeScript + SWC)
-- Material UI design, fully responsive
-- React Hot Toast for notifications
-- React Icons for rich UI
-- React Syntax Highlighter for code answers
-- React Type Animation for dynamic UI effects
+- **Create user authentication and authorization system** (custom auth)
+- **Implementing express-validators middleware** to validate data
+- **Storing user's chats in MongoDB**
+- **Generating custom and our own authentication system**
+- **Using JWT authorization tokens & HTTP‑Only cookies** (with `cookie-parser`)
+- **Protecting user routes with verification checks** (auth middleware)
+- **Modern React app with Vite** (TypeScript + SWC)
+- **Beautiful chat UI with Material UI (MUI)**
+- **Complete responsive design**
+- **React Hot Toast** for feedback
+- **React Icons** for iconography
+- **React Syntax Highlighter** for code answers
+- **React Type Animation** for subtle motion/typing effects
 
----
-
-## 🛠️ Tech Stack
-
-- Backend:Node.js, Express.js, MongoDB, Google Gemini API
-- Frontend: React, Vite, TypeScript, Material UI (MUI)
-- Other: React Hot Toast, React Icons, React Syntax Highlighter, React Type Animation
+> Bonus: Clean, maintainable codebase, sensible folder structure, and production‑ready configurations.
 
 ---
 
-## 📦 Project Structure
+## 🧰 Tech Stack
+
+**Frontend:** React, Vite, TypeScript, MUI, React Hot Toast, React Icons, React Syntax Highlighter, React Type Animation\
+**Backend:** Node.js, Express.js, TypeScript, express‑validator, cookie‑parser, JSON Web Tokens (JWT)\
+**Database:** MongoDB (Mongoose)\
+**AI:** Google Gemini API\
+
+
+---
+
+## 🗂️ Project Structure
 
 ```bash
-AI-Chat-Bot
-├── client                  # React frontend
-│   ├── public              # Public files
-│   └── src                 # Source files
-│       ├── components      # React components
-│       ├── context         # React context for auth
-│       ├── hooks           # Custom React hooks
-│       ├── pages           # Page components
-│       ├── styles          # CSS and style files
-│       └── utils           # Utility functions
-└── server                  # Node.js backend
-    ├── config              # Configuration files
-    ├── controllers         # Route controllers
-    ├── middleware          # Custom middleware
-    ├── models              # MongoDB models
-    ├── routes              # API routes
-    └── utils               # Utility functions
+AI-Buddy/
+├─ backend/
+│  ├─ src/
+│  │  ├─ config/          
+│  │  ├─ controllers/     
+│  │  ├─ db/          
+│  │  ├─ models/           
+│  │  ├─ routes/     
+│  │  ├─ utils/        
+│  │  └─ index.ts & app.ts       
+│  └─ package.json
+│
+├─ frontend/
+│  ├─ src/
+│  │  ├─ assets/      
+│  │  ├─ components/          
+│  │  ├─ context/         
+│  │  ├─ helpers/             
+│  │  ├─ pages/          
+│  │  └─ app.tsx & app.css & main.tsx &index.css
+│  ├─ index.html
+│  └─ package.json
+│
+├─ README.md
+
 ```
 
 ---
 
-## ⚡ Getting Started
+## 🔐 Environment Variables
 
-### 1. Clone the repository
+Create **backend** `.env`:
 
-```sh
-git clone https://github.com/ayushkhandelwal18/AI-Chat-Bot.git
-cd AI-Chat-Bot
+```env
+PORT=3000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=super_secret_key
+COOKIE_SECRET=another_secret_if_used
+GEMINI_API_KEY=your_gemini_api_key
+
 ```
 
+
+
+---
+
+## ⚙️ Installation & Setup
+
+```bash
+# 1) Clone repo
+git clone https://github.com/<your-username>/ai-buddy.git
+cd ai-chat-bot
+
+# 2) Backend setup
 cd backend
 npm install
+npm start    
 
-# Create a .env file with your MongoDB and Gemini API keys
-
-npm run startMONGO_URL=your_mongodb_connection_string
-GEMINI_API_KEY=your_gemini_api_key
-JWT_SECRET=your_jwt_secret
-COOKIE_SECRET=your_cookie_secretcd ../frontend
+# 3) Frontend setup
+cd ../frontend
 npm install
 npm run dev
+```
+
+Visit [**http://localhost:5173**](http://localhost:5173) and start chatting with AI‑Buddy.
+
+---
+
+## 🔑 Authentication Flow (JWT + HTTP‑Only Cookies)
+
+1. **Signup/Login** → validates using `express-validator`
+2. On success → issue **JWT access token**; set as **HTTP‑Only cookie**
+3. **Protected routes** check `req.cookies` → verify JWT → attach `req.user`
+4. **Logout** → clear cookie
+
+> Security: HTTP‑Only cookies guard against XSS; include CSRF protections if exposing state‑changing endpoints to browsers.
+
+---
+
+## 🧪 API Endpoints 
+
+```http
+User Routes
+
+POST /api/v1/user/signup – Register a new user
+
+POST /api/v1/user/login – Login with credentials
+
+GET /api/v1/user/auth-status – Check authentication status
+
+GET /api/v1/user/logout – Logout and clear cookies
+
+Chat Routes
+
+POST /api/v1/chat/new – Send a new chat message
+
+GET /api/v1/chat/all-chats – Get all chats of logged-in user
+
+DELETE /api/v1/chat/delete – Delete all chats of logged-in user
 
 
+---
+
+---
+
+## 🖥️ UI Highlights
+
+- **MUI** components with responsive layout
+- **React Hot Toast** for async feedback
+- **Syntax highlighting** in AI code answers
+- **Type animation** for subtle branding
 
 
-Personalized AI-Buddy by simply changing this prompt in chat.tsx file --
-const prompt = `
-You are AI-Buddy, not a generic AI model.  
-You are a smart, reliable, and friendly AI companion, built by Ayush Khandelwal using the Gemini API.  
-Your mission is to assist users with any query by providing structured, accurate, and easy-to-understand answers.  
+------
 
-📌 Identity Rules:
-- If the user greets ("Hello", "Hi", etc.), reply warmly:  
-  "Hello 👋, I’m AI-Buddy — your personal AI companion. How can I help you today?"  
-- If the user asks "Who are you?", always reply:  
-  "I’m AI-Buddy, your personal AI companion, built by Ayush Khandelwal using the Gemini API. I’m here to help you with anything you need — from coding and math to explanations, definitions, or just casual queries."  
-- Never describe yourself as a large language model, chatbot, or Google-trained model. You are only AI-Buddy.  
+## 🤝 Contributing
 
-📌 Answering Guidelines:
-1. First, identify the type of query:
-   - General knowledge  
-   - Coding or programming  
-   - Math or problem-solving  
-   - Science or technical concept  
-   - Recipes or step-by-step instructions  
-   - Definitions and meanings  
-   - Explanations with examples  
-   - Summaries, paragraphs, or structured points  
-   - Or any other type of query the user asks  
-2. Provide a clear, concise, and well-structured answer.  
-3. Choose the most suitable format:
-   - ✅ Bullets or numbered points for multiple items or steps  
-   - ✅ Code blocks (\`\`\`) for programming-related answers  
-   - ✅ Step-by-step explanation for math or problem-solving  
-   - ✅ Relevant examples wherever useful  
-   - ✅ Descriptive paragraphs for conceptual/detailed topics  
-   - ✅ Short and direct answers for simple queries  
-4. Maintain a tone that is **professional, friendly, and easy to follow**.  
-5. Avoid unnecessary repetition or filler — stay focused and helpful.  
-6. Always deliver a complete, high-quality response, regardless of query complexity.  
+Pull requests are welcome!
+---
 
-💡 Remember: Stay helpful, versatile, and clear.  
-You are AI-Buddy, the personal AI companion created by Ayush Khandelwal.  
+## Customization
+
+Change the prompt in chat.tsx to personalize your chatbot’s behavior
+--------
+
+
