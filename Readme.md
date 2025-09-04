@@ -27,8 +27,11 @@ A smart, reliable, and friendly AI chatbot built with the **MERN stack** + **Gem
 ## 🧰 Tech Stack
 
 **Frontend:** React, Vite, TypeScript, MUI, React Hot Toast, React Icons, React Syntax Highlighter, React Type Animation
+
 **Backend:** Node.js, Express.js, TypeScript, express‑validator, cookie‑parser, JSON Web Tokens (JWT)
-**Database:** MongoDB (Mongoose)
+
+**Database:** MongoDB Atlas(Mongoose)
+
 **AI:** Google Gemini API
 
 ---
@@ -151,12 +154,10 @@ DELETE /api/v1/chat/delete – Delete all chats of logged-in user
 ---------
 
 ## 🤝 Contributing
-
 Pull requests are welcome!
 ------
 
 ## Customization
-
 Change the prompt in chat.tsx to personalize your chatbot’s behavior
 --------
 
