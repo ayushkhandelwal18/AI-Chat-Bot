@@ -7,8 +7,8 @@ export const loginUser = async (email: string, password: string) => {
      if(res.status !== 200){
         throw new Error("Login failed");
      }
-
      const data =await res.data;
+     
      return data;
 };
 

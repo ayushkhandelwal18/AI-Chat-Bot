@@ -48,13 +48,14 @@ export const usersignup = async (
 
  
     //agar purana token hai to clear krdo
-    res.clearCookie(COOKIE_NAME,{   
-        httpOnly:true,
-        domain:"localhost",
-        signed:true,
-         path:"/" ,
-        secure: true, sameSite: "none"
-    }); 
+      res.clearCookie(COOKIE_NAME, {
+  httpOnly: true,
+  signed: true,
+  path: "/",
+  secure: process.env.NODE_ENV === "production",
+  sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+});
+ 
 
     const token = createToken(users._id.toString(), users.email, "7d");
     
@@ -63,14 +64,15 @@ export const usersignup = async (
   
     //token genrate hojaye uper wale se  
    //use cookie-parser for send token in cookie (backend to frontend)
-  res.cookie(COOKIE_NAME,token,{
-    path:"/" , //jha cokkie store hogi root me hi
-    domain:"localhost", 
-    expires,
-    httpOnly:true, //client side script se access na ho
-    signed:true, 
-      secure: true, sameSite: "none"
+res.cookie(COOKIE_NAME, token, {
+  path: "/",
+  expires,
+  httpOnly: true,
+  signed: true,
+  secure: process.env.NODE_ENV === "production",  // prod me true hoga
+  sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // local pe lax
 });
+
 
     return res.status(201).json({
         message: "User created successfully",
@@ -103,12 +105,13 @@ export const userlogin = async (
 
 
     //agar purana token hai to clear krdo
-    res.clearCookie(COOKIE_NAME,{   
-        httpOnly:true,
-        domain:"localhost",
-        signed:true,
-         path:"/" ,
-    }); 
+      res.clearCookie(COOKIE_NAME, {
+  httpOnly: true,
+  signed: true,
+  path: "/",
+  secure: process.env.NODE_ENV === "production",
+  sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+});
 
     const token = createToken(exixstinguser._id.toString(), exixstinguser.email, "7d");
     
@@ -117,13 +120,13 @@ export const userlogin = async (
   
     //token genrate hojaye uper wale se  
    //use cookie-parser for send token in cookie (backend to frontend)
-  res.cookie(COOKIE_NAME,token,{
-    path:"/" , //jha cokkie store hogi root me hi
-    domain:"localhost", 
-    expires,
-    httpOnly:true, //client side script se access na ho
-    signed:true, 
-      secure: true, sameSite: "none"
+res.cookie(COOKIE_NAME, token, {
+  path: "/",
+  expires,
+  httpOnly: true,
+  signed: true,
+  secure: process.env.NODE_ENV === "production",  // prod me true hoga
+  sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // local pe lax
 });
      
 
@@ -176,13 +179,13 @@ export const userlogout = async (
     }
    
     //clear cookies for logout
-       res.clearCookie(COOKIE_NAME,{   
-        httpOnly:true,
-        domain:"localhost",
-        signed:true,
-         path:"/" ,
-           secure: true, sameSite: "none"
-    }); 
+          res.clearCookie(COOKIE_NAME, {
+  httpOnly: true,
+  signed: true,
+  path: "/",
+  secure: process.env.NODE_ENV === "production",
+  sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+});
 
 
     return res
