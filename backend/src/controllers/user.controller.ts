@@ -124,7 +124,7 @@ export const userlogin = async (
 });
      
 
-    return res.status(200).json({message:"Login successful", name:exixstinguser.name, email:exixstinguser.email});
+    return res.status(200).json({message:"Login successful", name:exixstinguser.name, email:exixstinguser.email,token});
 
 
 }catch(error){
