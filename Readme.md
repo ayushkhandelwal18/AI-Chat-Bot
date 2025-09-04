@@ -26,11 +26,10 @@ A smart, reliable, and friendly AI chatbot built with the **MERN stack** + **Gem
 
 ## 🧰 Tech Stack
 
-**Frontend:** React, Vite, TypeScript, MUI, React Hot Toast, React Icons, React Syntax Highlighter, React Type Animation\
-**Backend:** Node.js, Express.js, TypeScript, express‑validator, cookie‑parser, JSON Web Tokens (JWT)\
-**Database:** MongoDB (Mongoose)\
-**AI:** Google Gemini API\
-
+**Frontend:** React, Vite, TypeScript, MUI, React Hot Toast, React Icons, React Syntax Highlighter, React Type Animation
+**Backend:** Node.js, Express.js, TypeScript, express‑validator, cookie‑parser, JSON Web Tokens (JWT)
+**Database:** MongoDB (Mongoose)
+**AI:** Google Gemini API
 
 ---
 
@@ -87,7 +86,7 @@ GEMINI_API_KEY=your_gemini_api_key
 
 ```bash
 # 1) Clone repo
-git clone https://github.com/<your-username>/ai-buddy.git
+git clone https://github.com/ayushkhandelwal18/AI-Chat-Bot.git
 cd ai-chat-bot
 
 # 2) Backend setup
@@ -101,7 +100,7 @@ npm install
 npm run dev
 ```
 
-Visit [**http://localhost:5173**](http://localhost:5173) and start chatting with AI‑Buddy.
+
 
 ---
 
@@ -112,14 +111,14 @@ Visit [**http://localhost:5173**](http://localhost:5173) and start chatting with
 3. **Protected routes** check `req.cookies` → verify JWT → attach `req.user`
 4. **Logout** → clear cookie
 
-> Security: HTTP‑Only cookies guard against XSS; include CSRF protections if exposing state‑changing endpoints to browsers.
+
 
 ---
 
 ## 🧪 API Endpoints 
 
-```http
-User Routes
+
+User Routes:
 
 POST /api/v1/user/signup – Register a new user
 
@@ -129,7 +128,7 @@ GET /api/v1/user/auth-status – Check authentication status
 
 GET /api/v1/user/logout – Logout and clear cookies
 
-Chat Routes
+Chat Routes:
 
 POST /api/v1/chat/new – Send a new chat message
 
@@ -138,7 +137,6 @@ GET /api/v1/chat/all-chats – Get all chats of logged-in user
 DELETE /api/v1/chat/delete – Delete all chats of logged-in user
 
 
----
 
 ---
 
@@ -150,12 +148,12 @@ DELETE /api/v1/chat/delete – Delete all chats of logged-in user
 - **Type animation** for subtle branding
 
 
-------
+---------
 
 ## 🤝 Contributing
 
 Pull requests are welcome!
----
+------
 
 ## Customization
 
