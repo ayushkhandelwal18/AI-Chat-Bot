@@ -53,6 +53,7 @@ export const usersignup = async (
         domain:"localhost",
         signed:true,
          path:"/" ,
+        secure: true, sameSite: "none"
     }); 
 
     const token = createToken(users._id.toString(), users.email, "7d");
@@ -68,6 +69,7 @@ export const usersignup = async (
     expires,
     httpOnly:true, //client side script se access na ho
     signed:true, 
+      secure: true, sameSite: "none"
 });
 
     return res.status(201).json({
@@ -121,6 +123,7 @@ export const userlogin = async (
     expires,
     httpOnly:true, //client side script se access na ho
     signed:true, 
+      secure: true, sameSite: "none"
 });
      
 
@@ -178,6 +181,7 @@ export const userlogout = async (
         domain:"localhost",
         signed:true,
          path:"/" ,
+           secure: true, sameSite: "none"
     }); 
 
 
