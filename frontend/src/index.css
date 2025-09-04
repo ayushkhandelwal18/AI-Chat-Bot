@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Tektur:wght@400..900&display=swap');
+
+
+
+html,body{
+  margin: 0;
+  padding: 0;
+  background:#05101c;
+  color: white;
+  font-family: "Roboto Slab","serif";
+
+}
+
+.image-inverted{
+  filter:invert(100%);
+}
+
+.nav-link{
+ font-weight: 600;
+ text-transform: uppercase;
+ margin-right:10px;
+ margin-left:10px;
+ padding: 8px 20px;
+ border-radius: 10px;
+  text-decoration: none;
+letter-spacing: 1px;
+}
+
+.MuiOutlinedInput-input-root.Mui-focused,
+.MuiOutlinedInput-notchedOutline {
+  border-color: white !important;
+}
+
+.tilt {
+  animation: tiltAnimation 3s infinite ease-in-out;
+}
+
+@keyframes tiltAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg); /* thoda right */
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-10deg); /* thoda left */
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+
+.rotate {
+  animation: rotation 8s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 10px #00fffc; }
+  50% { box-shadow: 0 0 20px #00fffc, 0 0 40px #00fffc; }
+  100% { box-shadow: 0 0 10px #00fffc; }
+}
+
+.glow-box {
+  animation: glow 2s infinite ease-in-out;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+}
+
