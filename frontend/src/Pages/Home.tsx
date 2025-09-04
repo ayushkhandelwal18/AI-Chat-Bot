@@ -1,5 +1,5 @@
 import { Box, useMediaQuery, useTheme } from "@mui/material";
-import React, { useEffect } from "react";   
+import  { useEffect } from "react";   
 import TypingAnim from "../components/typeranimation/Typinganimation";
 import Footer from "../components/footer/Footer";
 
