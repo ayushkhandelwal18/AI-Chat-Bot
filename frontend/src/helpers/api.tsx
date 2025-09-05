@@ -2,19 +2,28 @@ import axios from "axios";
 
 export const loginUser = async (email: string, password: string) => {
 
-     const res=await axios.post("/user/login", { email, password });
-
-     if(res.status !== 200){
-        throw new Error("Login failed");
-     }
-     const data =await res.data;
-     
-     return data;
+   try{
+      const res=await axios.post("/user/login", { email, password });
+      return res.data;
+   }
+catch (error: any) {
+    // axios error hamesha ye shape me throw kar
+    throw {
+      response: {
+        data: {
+          message: error.response?.data?.message || "Login Failed"
+        }
+      }
+    };
+  }
 };
+     
+
+  
 
 export const signupUser = async (name: string, email: string, password: string) => {
   try {
-    const res = await axios.post("/user/signup", { name, email, password }, { withCredentials: true });
+    const res = await axios.post("/user/signup", { name, email, password });
     return res.data;
   } catch (error: any) {
     // axios error hamesha ye shape me throw kar

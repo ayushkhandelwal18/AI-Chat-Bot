@@ -35,6 +35,9 @@ try {
   toast.error(errMsg, { id: "signup" });
 }
   };
+
+
+  
   useEffect(() => {
     if (auth?.user) {
        navigate("/chat");
