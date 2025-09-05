@@ -41,28 +41,25 @@ function Home() {
         <Box>
           <TypingAnim />
         </Box>
-        <Box
-          sx={{
-            width: "100%",
-            display: "flex",
-            flexDirection: { md: "row", xs: "column", sm: "column" },
-            gap: 5,
-            my: 10,
-          }}
-        >
-         <img
-  className="tilt"
-  src="robot.png"
-  alt="robot"
-  style={{ width: "200px", margin: "auto" }}
-/>
-          <img
-            className="image-inverted rotate"
-            src="aicircle.png"
-            alt="openai"
-            style={{ width: "200px", margin: "auto" }}
-          />
-        </Box>
+
+
+
+
+       <Box sx={{
+  display: "flex",
+  width: "100%",
+  flexDirection: { xs: "column", sm: "column", md: "row" },
+  alignItems: "center",
+  justifyContent: "center",
+  gap: { xs: 3, sm: 4, md: 5 },
+  my: { xs: 5, sm: 8, md: 10 }
+}}>
+  <img className="tilt" src="robot.png" alt="robot" style={{ width: "150px", maxWidth: "40%", margin: "auto" }}/>
+  <img className="image-inverted rotate" src="aicircle.png" alt="openai" style={{ width: "150px", maxWidth: "40%", margin: "auto" }}/>
+</Box>
+
+
+        
         <Box sx={{ display: "flex", mx: "auto" }}>
           <img
             src="chatt.png"

@@ -13,7 +13,13 @@ function Footer() {
           marginTop: 60,
         }}
       >
-    <p style={{ fontSize: "28px", textAlign: "center", padding: "20px", color: "#fff" }}>
+   <p style={{
+  fontSize: "clamp(16px, 2vw, 28px)",
+  textAlign: "center",
+  padding: "1rem",
+  color: "#fff",
+  lineHeight: 1.4
+}}>
    🚀 Built with ❤️ and code by    
   <span>
     <Link

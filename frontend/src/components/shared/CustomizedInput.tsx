@@ -18,12 +18,17 @@ function CustomizedInput(props: Props) {
       type={props.type}
       // 2. Pass the autoComplete prop directly to TextField
       autoComplete={props.autoComplete}
+      fullWidth //  makes it responsive automatically
       InputProps={{
-        style: {
-          width: "400px",
-          borderRadius: 10,
-          fontSize: 20,
+       sx: {
+          borderRadius: 2,
           color: "white",
+          fontSize: {
+            xs: "14px", // 📱 Mobile screens
+            sm: "16px", // 📱 Tablet
+            md: "18px", // 💻 Desktop
+            lg: "20px", // 🖥️ Large screens
+          },
         },
       }}
     />

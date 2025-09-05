@@ -65,10 +65,12 @@ return (
           style={{
             
             margin: "auto",
-            padding: "30px",
+            padding: "2rem",
             boxShadow: "10px 10px 20px #000",
             borderRadius: "10px",
             border: "none",
+            width: "90%",
+            maxWidth: "400px",
           }}
         >
           <Box
@@ -95,13 +97,11 @@ return (
                 px: 2,
                 py: 1,
                 mt: 2,
-                width: "400px",
+                width: "100%",
+                maxWidth: "400px",
                 borderRadius: 2,
                 bgcolor: "#00fffc",
-                ":hover": {
-                  bgcolor: "white",
-                  color: "black",
-                },
+                ":hover": { bgcolor: "white", color: "black" },
               }}
               endIcon={<IoIosLogIn />}
             >
