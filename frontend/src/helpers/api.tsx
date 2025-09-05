@@ -14,7 +14,7 @@ export const loginUser = async (email: string, password: string) => {
 
 export const signupUser = async (name: string, email: string, password: string) => {
   try {
-    const res = await axios.post("/user/signup", { name, email, password }, { withCredentials: true });
+    const res = await axios.post("/user/signup", { name, email, password });
     return res.data;
   } catch (error: any) {
     // axios error hamesha ye shape me throw kar
