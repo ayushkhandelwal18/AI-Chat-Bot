@@ -11,7 +11,7 @@ const app = express();
 // Middleware 
 app.use(
   cors({
-    origin: "http://localhost:5173", // Replace with your frontend URL
+    origin: "https://ai-chat-bot-cauj.onrender.com", 
     credentials: true,
   })
 );
