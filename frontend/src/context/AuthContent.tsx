@@ -59,6 +59,7 @@ export const AuthProvider =({children} : {children : ReactNode})=>{
         setUser({email:data.email , name:data.name});
         setIsLoggedIn(true);
     }
+    return data;
     };
 
     

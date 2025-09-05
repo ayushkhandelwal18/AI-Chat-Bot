@@ -13,6 +13,7 @@ app.use(cors({
     origin: [
         "https://ai-chat-bot-cauj.onrender.com",
         
+        
     ],
     credentials: true,
 }));

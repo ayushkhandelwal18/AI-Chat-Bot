@@ -8,7 +8,7 @@ import { AuthProvider } from "./context/AuthContent.tsx";
 import {Toaster} from "react-hot-toast"
 import axios from "axios";
 
-axios.defaults.baseURL = "https://ai-chat-bot-backend-4hic.onrender.com/api/v1";
+axios.defaults.baseURL = "https://ai-chat-bot-cauj.onrender.com/api/v1";
 axios.defaults.withCredentials = true;
 
 const theme = createTheme({

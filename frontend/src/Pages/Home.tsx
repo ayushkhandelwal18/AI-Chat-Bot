@@ -58,7 +58,7 @@ function Home() {
 />
           <img
             className="image-inverted rotate"
-            src="openai.png"
+            src="aicircle.png"
             alt="openai"
             style={{ width: "200px", margin: "auto" }}
           />

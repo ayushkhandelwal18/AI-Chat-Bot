@@ -12,18 +12,21 @@ export const loginUser = async (email: string, password: string) => {
      return data;
 };
 
-export const signupUser = async (name:string,email: string, password: string) => {
-
-     const res=await axios.post("/user/signup", { name,email, password });
-
-     if(res.status !== 201){
-        throw new Error("Signup Failed");
-     }
-
-     const data =await res.data;
-     return data;
+export const signupUser = async (name: string, email: string, password: string) => {
+  try {
+    const res = await axios.post("/user/signup", { name, email, password }, { withCredentials: true });
+    return res.data;
+  } catch (error: any) {
+    // axios error hamesha ye shape me throw kar
+    throw {
+      response: {
+        data: {
+          message: error.response?.data?.message || "Signup Failed"
+        }
+      }
+    };
+  }
 };
-
 
 export const checkAuthStatus = async () => {
 

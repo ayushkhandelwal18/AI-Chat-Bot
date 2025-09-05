@@ -14,10 +14,10 @@ function Logo() {
     >
       <Link to={"/"}>
         <img
-          src="chatbot.png"
+          src="logo.png"
           alt="openai"
-          width={"30px"}
-          height={"30px"}
+          width={"35px"}
+          height={"35px"}
           className="image-inverted"
         />
       </Link>{" "}

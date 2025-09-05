@@ -19,15 +19,21 @@ function Signup() {
     const name = formData.get("name") as string;
     const email = formData.get("email") as string;
     const password = formData.get("password") as string;
+try {
+  toast.loading("Signing Up", { id: "signup" });
+  const res = await auth?.signup(name, email, password);
+ toast.success((res as any)?.message || "Signup Successfully", { id: "signup" });
+} catch (error: any) {
+  console.log("Signup Error:", error);
 
-    try {
-      toast.loading("Signing Up", { id: "signup" });
-      await auth?.signup(name,email, password);
-      toast.success("Signup In Successfully", { id: "signup" });
-    } catch (error) {
-      console.log(error);
-      toast.error("Signing Up  Failed", { id: "signup" });
-    }
+  // yaha dono case cover karne hai:
+  // 1) jab api.tsx ne throw { message: "User already exists" }
+  // 2) jab koi aur error ho (axios/network etc)
+  const errMsg =
+    error?.message || error.response?.data?.message || "Signing Up Failed";
+
+  toast.error(errMsg, { id: "signup" });
+}
   };
   useEffect(() => {
     if (auth?.user) {
